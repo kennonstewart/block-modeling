@@ -1,10 +1,11 @@
 import numpy as np
 import pytest
 from sbm.base_sbm import BaseSBM
+from test_data import *
 
 def test_base_sbm_initialization():
-    adjacency_matrix = np.array([[0, 1], [1, 0]])
-    number_of_blocks = 2
+    adjacency_matrix = TEST_BASE_SBM_INITIALIZATION["adjacency_matrix"]
+    number_of_blocks = TEST_BASE_SBM_INITIALIZATION["number_of_blocks"]
 
     # Initialize BaseSBM
     sbm = BaseSBM(adjacency_matrix, number_of_blocks)
