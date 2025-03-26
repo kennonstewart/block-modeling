@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/dc_sbm/__init__.py
+src/dc_sbm/dc_sbm.py
+src/dc_sbm/optimizer.py
+src/dc_sbm/sbm.py
+src/dc_sbm.egg-info/PKG-INFO
+src/dc_sbm.egg-info/SOURCES.txt
+src/dc_sbm.egg-info/dependency_links.txt
+src/dc_sbm.egg-info/requires.txt
+src/dc_sbm.egg-info/top_level.txt
