@@ -14,5 +14,6 @@ dependencies = [
     "pandas",
     "scipy",
     "pytest",
+    "capsys",
     "networkx",
 ]

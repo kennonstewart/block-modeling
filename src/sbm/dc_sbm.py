@@ -1,12 +1,12 @@
 import numpy as np
-from base_sbm import 
+from base_sbm import BaseSBM
 from sbm.logging_config import setup_logging
 
 logger = setup_logging(__name__)
 
 class DCSBM(BaseSBM):
     """
-    Degree-Corrected Stochastic Block Model"
+    Degree-Corrected Stochastic Block Model
     """
 
     def __init__(self, *args, **kwargs):
