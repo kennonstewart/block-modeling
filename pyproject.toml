@@ -9,3 +9,10 @@ description = "Inference engine for degree-corrected stochastic block models"
 authors = [{ name = "Kennon Stewart", email = "ksstewar@umich.edu" }]
 readme = "README.md"
 requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "pytest",
+    "networkx",
+]

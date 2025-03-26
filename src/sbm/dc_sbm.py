@@ -1,5 +1,8 @@
 import numpy as np
-from base_sbm import BaseSBM
+from base_sbm import 
+from sbm.logging_config import setup_logging
+
+logger = setup_logging(__name__)
 
 class DCSBM(BaseSBM):
     """
