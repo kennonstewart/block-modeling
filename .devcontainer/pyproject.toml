@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dc-sbm"
+version = "0.1.0"
+description = "Inference engine for degree-corrected stochastic block models"
+authors = [{ name = "Kennon Stewart", email = "ksstewar@umich.edu" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "pytest",
+    "capsys",
+    "networkx",
+]

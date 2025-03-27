@@ -1,8 +1,10 @@
 // .devcontainer/devcontainer.json
 {
     "name": "My Python Dev Env",
+    "context":"..",
     "build": {
-      "dockerfile": "Dockerfile"
+      "dockerfile": "Dockerfile",
+      "context":".."
     },
     "settings": {
       "terminal.integrated.shell.linux": "/bin/bash"

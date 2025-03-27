@@ -1,6 +1,5 @@
 from sbm.sbm import SBM
 from test_data import *
-from pytest import capsys
 import pytest
 
 
@@ -26,8 +25,7 @@ def test_sbm_likelihood():
 
     # Compute likelihood
     likelihood = sbm.compute_likelihood()
-
-    captured = capsys.readouterr()
+    
     # Assertions
     assert likelihood == 2
 
