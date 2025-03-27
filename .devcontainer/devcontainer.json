@@ -1,6 +1,6 @@
 // .devcontainer/devcontainer.json
 {
-    "name": "My Python Dev Env",
+    "name": "block-modeling-container",
     "context":"..",
     "build": {
       "dockerfile": "Dockerfile",
