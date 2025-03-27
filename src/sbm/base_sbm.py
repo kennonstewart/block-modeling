@@ -1,4 +1,5 @@
 import numpy as np
+from logging_config import setup_logging
 
 logger = setup_logging(__name__)
 
@@ -25,5 +26,13 @@ class BaseSBM:
                     m_rs += self.adjacency_matrix[i, j]
         return m_rs
 
-    def fit(self):
-        raise NotImplementedError
+    def fit(self, max_iter=100):
+        """
+        for the optimizer to fit the model over around 100 iterations
+        """
+        for _ in range(max_iter):
+            logging.info(f"Fitting model on iteration: {_}")
+            self.optimize_model()
+            logging.info("Model fit complete")
+        return self.model()
+

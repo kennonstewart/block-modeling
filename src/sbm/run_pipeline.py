@@ -2,6 +2,7 @@
 
 import numpy as np
 from sbm import SBM
+from logging_config import setup_logging
 from dc_sbm import DCSBM
 
 logger = setup_logging(__name__)
@@ -13,6 +14,8 @@ A_undirected_binary = np.array([
     [0, 1, 0, 1],
     [1, 0, 1, 0]
 ])
+
+logger.info("Running SBM on a toy dataset...")
 
 # Generate a directed binary matrix
 A_directed_binary = np.array([
@@ -28,7 +31,7 @@ np.random.seed(9271999)
 A_random = np.random.randint(0, 11, (10, 10))
 
 # Number of communities to fit
-K = 2
+K = 4
 
 # Choose model type
 USE_DEGREE_CORRECTION = True
@@ -36,10 +39,10 @@ USE_DEGREE_CORRECTION = True
 # Initialize and run model
 if USE_DEGREE_CORRECTION:
     model = DCSBM(A_random, K)
-    print("Running Degree-Corrected SBM...")
+    logger.info("Running Degree-Corrected SBM...")
 else:
     model = SBM(A, K)
-    print("Running Standard SBM...")
+    logger.info("Running Standard SBM...")
 
 model.fit()
 

@@ -1,6 +1,5 @@
 import numpy as np
 from base_sbm import BaseSBM
-from optimizer import calculate_mrs
 from logging_config import setup_logging
 
 logger = setup_logging(__name__)
