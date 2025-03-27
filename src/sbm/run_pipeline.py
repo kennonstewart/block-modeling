@@ -1,7 +1,8 @@
 # src/sbm/run_pipeline.py
 
 import numpy as np
-from sbm import DCSBM, SBM
+from sbm import SBM
+from dc_sbm import DCSBM
 
 # Generate a toy adjacency matrix (undirected, binary)
 A = np.array([
@@ -28,5 +29,5 @@ else:
 model.fit()
 
 # Show results
-print("Group assignments:", model.assignments)
+print("Group assignments:", model.group_assignments)
 print("Log-likelihood:", model.compute_likelihood())

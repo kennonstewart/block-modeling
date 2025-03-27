@@ -1,6 +1,6 @@
 import numpy as np
-from sbm.base_sbm import BaseSBM
-from sbm.logging_config import setup_logging
+from base_sbm import BaseSBM
+from logging_config import setup_logging
 
 logger = setup_logging(__name__)
 
