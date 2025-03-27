@@ -9,9 +9,9 @@
     },
     "extensions": [
       "ms-python.python",
-      "ms-toolsai.jupyter"
+      "ms-toolsai.jupyter",
+      "ms-python.vscode-pylance"
     ],
     "postCreateCommand": "pip install -r requirements.txt",
     "remoteUser": "root"
   }
-  
