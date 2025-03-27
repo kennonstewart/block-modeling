@@ -16,7 +16,7 @@ A = np.array([
 K = 2
 
 # Choose model type
-USE_DEGREE_CORRECTION = True
+USE_DEGREE_CORRECTION = False
 
 # Initialize and run model
 if USE_DEGREE_CORRECTION:

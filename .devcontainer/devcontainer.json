@@ -7,7 +7,9 @@
       "context":".."
     },
     "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/src"
     },
     "extensions": [
       "ms-python.python",
@@ -17,3 +19,4 @@
     "postCreateCommand": "pip install -r requirements.txt",
     "remoteUser": "root"
   }
+}

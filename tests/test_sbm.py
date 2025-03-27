@@ -40,5 +40,5 @@ def test_sbm_fit():
     )
 
     # assert that the fit method is not implemented
-    with pytest.raises(NotImplementedError):
-        sbm.fit()
+    model_fit = sbm.fit()
+    assert model_fit == 10
