@@ -1,11 +1,17 @@
 
-def calculate_mrs(r, s, adjacency_matrix, group_assignments):
+logger = setup_logging(__name__)
+
+def optimize_model(adjacency_matrix, group_assignments):
     """
-    Calculate the number of edges between groups r and s
+    Given an adjacency matrix, fit a Stochastic Block Model such that
+    the likelihood of the observed group assignments is maximized.
     """
-    m_rs = 0
-    for i in range(len(group_assignments)):
-        for j in range(len(group_assignments)):
-            if group_assignments[i] == r and group_assignments[j] == s and i != j:
-                m_rs += adjacency_matrix[i, j]
-    return m_rs
+    likelihood = 0
+    groups = np.unique(group_assignments)
+    for r in groups:
+        for s in groups:
+            if r == s:
+                continue
+            m_rs = calculate_mrs(adjacency_matrix, group_assignments, r, s)
+            likelihood += compute_likelihood_contribution(adjacency_matrix, group_assignments, r, s, m_rs)
+    return likelihood

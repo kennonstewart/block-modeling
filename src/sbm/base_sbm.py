@@ -1,5 +1,7 @@
 import numpy as np
 
+logger = setup_logging(__name__)
+
 class BaseSBM:
     """
     Base class for Stochastic Block Model
@@ -11,6 +13,17 @@ class BaseSBM:
         self.n = adjacency_matrix.shape[0]
         self.group_assignments = np.random.randint(number_of_blocks, size=self.n)
         self.degree_correction = degree_correction
+
+    def _calculate_mrs(self, r, s):
+        """
+        Calculate the number of edges between groups r and s
+        """
+        m_rs = 0
+        for i in range(len(self.group_assignments)):
+            for j in range(len(self.group_assignments)):
+                if self.group_assignments[i] == r and self.group_assignments[j] == s and i != j:
+                    m_rs += self.adjacency_matrix[i, j]
+        return m_rs
 
     def fit(self):
         raise NotImplementedError

@@ -13,17 +13,6 @@ class SBM(BaseSBM):
     def __init__(self, *args, **kwargs):
         # Call the parent class's __init__ method
         super().__init__(*args, **kwargs)
-
-    def __calculate_mrs(self, r, s):
-        """
-        Calculate the number of edges between groups r and s
-        """
-        m_rs = 0
-        for i in range(len(self.group_assignments)):
-            for j in range(len(self.group_assignments)):
-                if self.group_assignments[i] == r and self.group_assignments[j] == s and i != j:
-                    m_rs += self.adjacency_matrix[i, j]
-        return m_rs
     
     def __compute_likehood_contribution(self, r, s, m_rs):
         """
@@ -47,6 +36,6 @@ class SBM(BaseSBM):
                 output += self.__compute_likehood_contribution(r, s, m_rs)
         return output
 
-    def fit(self):
-        # raise not implemented error
-        return 10
+    def fit(self, adjacency_matrix, number_of_blocks):
+        # Placeholder for optimization routine
+        pass

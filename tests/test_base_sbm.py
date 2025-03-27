@@ -16,6 +16,22 @@ def test_base_sbm_initialization():
     assert sbm.n == 2
     assert len(sbm.group_assignments) == 2
 
+def test_base_sbm_mrs_calculation():
+    adjacency_matrix = TEST_BASE_SBM_INITIALIZATION["adjacency_matrix"]
+    number_of_blocks = TEST_BASE_SBM_INITIALIZATION["number_of_blocks"]
+
+    # Initialize BaseSBM
+    sbm = BaseSBM(adjacency_matrix, number_of_blocks)
+
+    # initialize the test groups
+    sbm.group_assignments = np.array([0, 1])
+
+    # Calculate m_rs
+    m_rs = sbm._calculate_mrs(0, 1) 
+
+    # Assertions
+    assert m_rs == 1
+
 def test_base_sbm_fit():
     adjacency_matrix = TEST_BASE_SBM_INITIALIZATION["adjacency_matrix"]
     number_of_blocks = TEST_BASE_SBM_INITIALIZATION["number_of_blocks"]
