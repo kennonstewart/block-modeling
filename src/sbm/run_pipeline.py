@@ -49,3 +49,4 @@ model.fit()
 # Show results
 print("Group assignments:", model.group_assignments)
 print("Log-likelihood:", model.compute_likelihood())
+print("Results from fitting: ", model.fit())

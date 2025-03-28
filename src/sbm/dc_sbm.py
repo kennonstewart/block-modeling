@@ -48,4 +48,5 @@ class DCSBM(BaseSBM):
 
     def fit(self):
         # Placeholder for optimization routine
-        pass
+        output = self._fit()
+        return output

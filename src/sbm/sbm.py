@@ -37,4 +37,4 @@ class SBM(BaseSBM):
 
     def fit(self, adjacency_matrix, number_of_blocks):
         # Placeholder for optimization routine
-        pass
+        self._fit()
